@@ -1,0 +1,11 @@
+@startuml singleton
+
+title Singleton Design Pattern
+
+class ExampleSingleton { 
+  - {static} instance: ExampleSingleton
+  - ExampleSingleton()
+  + {static} getInstance(): ExampleSingleton 
+}
+
+@enduml

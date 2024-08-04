@@ -1,0 +1,12 @@
+@startuml singleton
+
+title Singleton Design Pattern in C++
+
+class ExampleSingleton { 
+  - ExampleSingleton()
+  + ExampleSingleton(ExampleSingleton const&) = delete;
+  + operator=(ExampleSingleton const&) = delete;
+  + {static} getInstance(): ExampleSingleton& 
+}
+
+@enduml
