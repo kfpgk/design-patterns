@@ -1,0 +1,2 @@
+#define VERSION_MAJOR @design-patterns_VERSION_MAJOR@
+#define VERSION_MINOR @design-patterns_VERSION_MINOR@
