@@ -53,10 +53,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Copy file
+        run: |
+             mkdir tmp
+             cp ./doc/Creational/Singleton.cpp ./tmp/.
       - name: Gist Repo Sync
         uses: pentatonicfunk/action-gist-repo-sync@v1.8
         with:
           gist_token: ${{ secrets.GIST_TOKEN }}
           gist_id: acea0c4240040edd33da0aff986cbd34
-          source_path: ./doc/Creational/Singleton.cpp
+          source_path: .tmp
 
