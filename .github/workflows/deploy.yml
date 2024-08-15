@@ -1,8 +1,19 @@
-- name: Checkout
-  uses: actions/checkout@v1
-- name: Gist Repo Sync
-  uses: pentatonicfunk/action-gist-repo-sync@v1.8
-  with:
-    gist_token: ${{ secrets.GIST_TOKEN }}
-    gist_id: 37725ab7b444fb15c6a917b07495aac6
-    source_path: ./
+name: Sync to Gist
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  Sync-to-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Gist Repo Sync
+        uses: pentatonicfunk/action-gist-repo-sync@v1.8
+        with:
+          gist_token: ${{ secrets.GIST_TOKEN }}
+          gist_id: 37725ab7b444fb15c6a917b07495aac6
+          source_path: ./
+
+
