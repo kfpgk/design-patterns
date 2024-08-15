@@ -56,7 +56,7 @@ jobs:
       - name: Copy file
         run: |
              mkdir tmp
-             cp ./doc/Creational/Singleton.cpp ./tmp/.
+             cp ./doc/Creational/singleton.puml ./tmp/.
       - name: Gist Repo Sync
         uses: pentatonicfunk/action-gist-repo-sync@v1.8
         with:
