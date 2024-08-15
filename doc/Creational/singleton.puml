@@ -2,10 +2,10 @@
 
 title Singleton Design Pattern
 
-class ExampleSingleton { 
-  - {static} instance: ExampleSingleton
-  - ExampleSingleton()
-  + {static} getInstance(): ExampleSingleton 
+class Singleton { 
+  - {static} instance: Singleton
+  - Singleton()
+  + {static} getInstance(): Singleton 
 }
 
 @enduml

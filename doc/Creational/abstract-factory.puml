@@ -1,0 +1,50 @@
+@startuml abstract-factory
+
+title Abstract factory design pattern
+
+package "Abstract product family" {
+    abstract class AbstractFactory
+    abstract class Product1
+    abstract class Product2
+    abstract class Product3
+}
+
+package "Product family A" {
+    class FactoryA
+    class ProductA1
+    class ProductA2
+    class ProductA3
+}
+
+package "Product family B" {
+    class FactoryB
+    class ProductB1
+    class ProductB2
+    class ProductB3
+}
+
+AbstractFactory <|-- FactoryA
+AbstractFactory <|-- FactoryB
+
+Product1 <|-- ProductA1
+Product1 <|-- ProductB1
+
+Product2 <|-- ProductA2
+Product2 <|-- ProductB2
+
+Product3 <|-- ProductA3
+Product3 <|-- ProductB3
+
+AbstractFactory "creates" --> Product1
+AbstractFactory "creates" --> Product2
+AbstractFactory "creates" --> Product3
+
+FactoryA "creates" --> ProductA1
+FactoryA "creates" --> ProductA2
+FactoryA "creates" --> ProductA3
+
+FactoryB "creates" --> ProductB1
+FactoryB "creates" --> ProductB2
+FactoryB "creates" --> ProductB3
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml simple-factory
+
+title Simple Factory Design Pattern \n (not really a design pattern)
+
+class SimpleFactory { 
+    + createProductA(): ProductA
+    + createProductB(): ProductB
+    + createProductC(): ProductC
+}
+
+class ProductA
+class ProductB
+class ProductC
+
+SimpleFactory "creates" --> ProductA
+SimpleFactory "creates" --> ProductB
+SimpleFactory "creates" --> ProductC
+
+@enduml

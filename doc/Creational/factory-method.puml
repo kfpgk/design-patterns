@@ -1,0 +1,37 @@
+@startuml factory-method
+
+title Factory method design pattern
+
+package "Abstract" {
+    abstract class businessLogic {
+        + runBusinessLogic()
+        - {abstract} createProduct() : Product
+    }
+    abstract class Product
+}
+
+package "A" {
+    class businessLogicA {
+        - createProduct() : Product
+    }
+    class ProductA
+}
+
+package "B" {
+    class businessLogicB {
+        - createProduct() : Product
+    }
+    class ProductB
+}
+
+businessLogic <|-- businessLogicA
+businessLogic <|-- businessLogicB
+
+Product <|-- ProductA
+Product <|-- ProductB
+
+businessLogic "uses" --> Product
+businessLogicA "creates" --> ProductA
+businessLogicB "creates" --> ProductB
+
+@enduml

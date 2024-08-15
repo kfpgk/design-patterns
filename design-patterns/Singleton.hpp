@@ -1,5 +1,5 @@
-#ifndef DESIGN_PATTERNS_SINGLETON_HPP
-#define DESIGN_PATTERNS_SINGLETON_HPP
+#ifndef SINGLETON_HPP
+#define SINGLETON_HPP
 
 // Ref: https://stackoverflow.com/a/1008289
 class Singleton {

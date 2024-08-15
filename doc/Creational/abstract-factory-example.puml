@@ -1,0 +1,51 @@
+@startuml abstract-factory-example
+
+title Abstract factory design pattern GUI example
+
+package "GUI" {
+    abstract class GuiFactory
+    abstract class Button
+    abstract class Window
+    abstract class ToolBar
+}
+
+package "Dark Theme" {
+    class DarkThemeFactory
+    class DarkButton
+    class DarkWindow
+    class DarkToolBar
+}
+
+package "Light Theme" {
+    class LightThemeFactory
+    class LightButton
+    class LightWindow
+    class LightToolBar
+}
+
+
+GuiFactory <|-- DarkThemeFactory
+GuiFactory <|-- LightThemeFactory
+
+Button <|-- DarkButton
+Button <|-- LightButton
+
+Window <|-- DarkWindow
+Window <|-- LightWindow
+
+ToolBar <|-- DarkToolBar
+ToolBar <|-- LightToolBar
+
+GuiFactory "creates" --> Button
+GuiFactory "creates" --> Window
+GuiFactory "creates" --> ToolBar
+
+DarkThemeFactory "creates" --> DarkButton
+DarkThemeFactory "creates" --> DarkWindow
+DarkThemeFactory "creates" --> DarkToolBar
+
+LightThemeFactory "creates" --> LightButton
+LightThemeFactory "creates" --> LightWindow
+LightThemeFactory "creates" --> LightToolBar
+
+@enduml

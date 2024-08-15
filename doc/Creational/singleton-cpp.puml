@@ -2,11 +2,11 @@
 
 title Singleton Design Pattern in C++
 
-class ExampleSingleton { 
-  - ExampleSingleton()
-  + ExampleSingleton(ExampleSingleton const&) = delete;
-  + operator=(ExampleSingleton const&) = delete;
-  + {static} getInstance(): ExampleSingleton& 
+class Singleton { 
+  - Singleton()
+  + Singleton(Singleton const&) = delete;
+  + operator=(Singleton const&) = delete;
+  + {static} getInstance(): Singleton& 
 }
 
 @enduml
