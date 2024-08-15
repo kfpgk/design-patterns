@@ -4,7 +4,7 @@ on:
     branches:
       - 'main'
 jobs:
-  Sync-to-gist:
+  sync-cpp-sources:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,6 +14,17 @@ jobs:
         with:
           gist_token: ${{ secrets.GIST_TOKEN }}
           gist_id: 37725ab7b444fb15c6a917b07495aac6
-          source_path: ./
+          source_path: ./design-pattern/**
+  sync-puml-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Gist Repo Sync
+        uses: pentatonicfunk/action-gist-repo-sync@v1.8
+        with:
+          gist_token: ${{ secrets.GIST_TOKEN }}
+          gist_id: 37725ab7b444fb15c6a917b07495aac6
+          source_path: ./doc/**
 
 
