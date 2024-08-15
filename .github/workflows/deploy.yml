@@ -62,5 +62,5 @@ jobs:
         with:
           gist_token: ${{ secrets.GIST_TOKEN }}
           gist_id: acea0c4240040edd33da0aff986cbd34
-          source_path: .tmp
+          source_path: ./tmp
 
