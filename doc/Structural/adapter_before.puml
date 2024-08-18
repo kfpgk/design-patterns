@@ -1,0 +1,17 @@
+@startuml adapter-before
+
+title Situation before Adapter is implemented
+
+package "(Sub)system" {
+    class Client
+}
+
+package "External" {
+    class Service1
+    class Service2
+}
+
+Client -->  Service1
+Client "What if these dependencies break?" -->  Service2
+
+@enduml

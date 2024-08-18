@@ -1,0 +1,21 @@
+@startuml facade
+
+title Facade Design Pattern
+
+class Client
+
+package "(Sub)system" {
+    class Facade
+
+    class Functionality1
+    class Functionality2
+    class Functionality3
+}
+
+Client --> Facade
+
+Facade --> Functionality1
+Facade --> Functionality2
+Facade --> Functionality3
+
+@enduml

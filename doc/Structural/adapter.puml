@@ -1,0 +1,25 @@
+@startuml adapter
+
+title Adapter Design Pattern
+
+package "(Sub)system" {
+    class Client
+    interface ClientInterface
+    class Adapter1 {
+        - Service1
+    }
+    class Adapter2 {
+        - Service2
+    }
+}
+
+class Service1
+class Service2
+
+Client  --> ClientInterface
+Adapter1 --|> ClientInterface
+Adapter1 --> Service1
+Adapter2 --|> ClientInterface
+Adapter2 --> Service2
+
+@enduml
